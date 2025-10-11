@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title|default:"Данные" }}</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        .data-item { border: 1px solid #ccc; border-radius: 6px; padding: 1em; max-width: 400px; }
+        .data-title { font-weight: bold; margin-bottom: 0.5em; }
+    </style>
+</head>
+<body>
+    <div class="data-item">
+        <div class="data-title">{{ title|default:"Данные" }}</div>
+        <div class="data-value">{{ value|default:"(нет данных)" }}</div>
+    </div>
+    <a href="/all/">Все пожелания</a>
+</body>
+</html>

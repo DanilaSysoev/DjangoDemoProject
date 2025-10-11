@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from random import choice
 from .models import Wish
 
@@ -8,4 +8,18 @@ def index(request):
     select.using_count += 1
     select.save()
     
-    return HttpResponse(select)
+    context = {
+        'title': 'Random wish',
+        'value': select
+    }
+    
+    return render(request, 'index.html', context)
+
+
+def all_wishes(request):
+    wishes = Wish.objects.all()
+    context = {
+        'wishes': wishes
+    }
+    return render(request, 'all.html', context)
+    

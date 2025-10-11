@@ -62,7 +62,7 @@ ROOT_URLCONF = 'django_demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates/random_wish'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

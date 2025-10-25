@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="Ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Relation demo</title>
+    </head>
+    <body>
+        <h2>Демонстрация связи One to One</h2>
+        {% for human in humans %}
+            <strong>Human:</strong> <i>{{ human }}</i>
+            <br/>
+            {% if human.drive_license %}
+                <strong>Drive License:</strong> <i>{{ human.drive_license }}</i>
+            {% endif %}
+            <hr/>
+        {% endfor %}
+        <br/>
+        <br/>
+        <h2>Демонстрация связи One to Many</h2>
+        {% for city in cities %}
+            <strong>City:</strong> <i>{{ city }}</i>
+            <br/>
+            <ul>
+            {% for human in city.humans.all %}
+                <li>
+                    <strong>Human {{ forloop.counter }}:</strong> <i>{{ human }}</i>
+                </li>
+            {% endfor %}
+            </ul>
+            <hr/>
+        {% endfor %}
+        <br/>
+        <br/>
+        <a href="{% url 'courses' %}">Студенты и курсы</a>
+    </body>
+</html>

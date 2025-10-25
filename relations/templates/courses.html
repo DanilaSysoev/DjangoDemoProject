@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="Ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Many to many demo</title>
+    </head>
+    <body>
+        <h2>Демонстрация связи Many to Many</h2>
+        {% for course in courses %}
+            <strong>Course:</strong> <i>{{ course }}</i>
+            <br/>
+            <ul>
+            {% for student in course.students.all %}
+                <li>
+                    <strong>Student {{ forloop.counter }}:</strong> <i>{{ student }}</i>
+                </li>
+            {% endfor %}
+            </ul>
+            <hr/>
+        {% endfor %}
+        <br/>
+        <br/>
+        {% for student in students %}
+            <strong>Student:</strong> <i>{{ student }}</i>
+            <br/>
+            <ul>
+            {% for course in student.courses.all %}
+                <li>
+                    <strong>Course {{ forloop.counter }}:</strong> <i>{{ course }}</i>
+                </li>
+            {% endfor %}
+            </ul>
+            <hr/>
+        {% endfor %}
+        <br/>
+        <br/>
+        <a href="{% url 'index' %}">Главная</a>
+    </body>
+</html>

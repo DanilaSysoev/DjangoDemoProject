@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="Ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Human</title>
+    </head>
+    <body>
+        <h2>Описание человека</h2>
+        <p>
+            <strong>Имя: </strong> {{ human.name }}
+        </p>
+        <p>
+            <strong>Город проживания: </strong> {{ human.city.name }}
+        </p>
+        {% if human.drive_license %}
+        <p>
+            <strong>Водительское удостоверение:</strong> <i>{{ human.drive_license }}</i>
+        </p>
+        {% endif %}
+    </body>
+</html>

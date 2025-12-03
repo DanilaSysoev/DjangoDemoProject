@@ -7,7 +7,7 @@
     <body>
         <h2>Демонстрация связи One to One</h2>
         {% for human in humans %}
-            <strong>Human:</strong> <i>{{ human }}</i>
+            <strong>Human:</strong> <a href="/human/{{ human.id }}">{{ human }}</a>
             <br/>
             {% if human.drive_license %}
                 <strong>Drive License:</strong> <i>{{ human.drive_license }}</i>

@@ -14,3 +14,9 @@ def courses(request):
         'students': Student.objects.all(),
     }
     return render(request, template_name='courses.html', context=context)
+
+def human(request, id: int):
+    context = {
+        'human': Human.objects.get(id=id),
+    }
+    return render(request, template_name='human.html', context=context)
